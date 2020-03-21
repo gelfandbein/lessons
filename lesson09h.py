@@ -4,25 +4,16 @@
 # Author: Boris Gelfandbein
 """
 
-"""
-### Task 1 ###
-"""
 print("### Task 1\n")
 
 _message = str("Hello World!")
 _amount  = int(12)
 _fruits  = ["Apple", "Lemon", "Banana", "Peach"]
 
-"""
-### Task #2 ###
-"""
 print("### Task 2\n")
 if _amount >= 10:
     print(_message)
     
-"""
-### Task #3 ###
-"""
 print("### Task 3\n")
 i = 1
 print(f"Total fruits: ", len(_fruits))
@@ -36,9 +27,7 @@ while i <= len(_fruits):
             print()
     i += 1
 
-"""
-### Task #4 ###
-"""
+
 print("\n### Task 4")
 def double_positive(_num):
     if _num > 0:
@@ -49,9 +38,7 @@ def double_positive(_num):
 _num = int(input("Enter number to double: "))
 print(f"{double_positive(_num)}\n")
 
-"""
-### Task #5 ###
-"""
+
 print("### Task 5\n")
 
 _num = [10, 0, 2, -7, 4]
@@ -60,18 +47,6 @@ for i in _num:
 
 print()
 
-"""
-### Task #6 ###
-
- - Alex: 17
- - Nick: 8
- - John: 40
- - Anna: 21
- - Kate: 15
- - Lisa: 30
- - Jake: 2
- 
-"""
 
 print("Task 6\n")
 _dict = {"Alex": 17, "Nick": 8, "John": 40, "Anna": 21, "Kate": 15, "Lisa": 30, "Jake": 2}
