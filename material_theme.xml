@@ -6,9 +6,10 @@
     <option name="overrideAccentColor" value="false" />
     <option name="pristineConfig" value="false" />
     <option name="treeFontSizeEnabled" value="true" />
+    <option name="upperCaseTabs" value="true" />
     <option name="customSidebarHeight" value="20" />
-    <option name="treeFontSize" value="16" />
-    <option name="settingsSelectedTab" value="3" />
+    <option name="settingsSelectedTab" value="1" />
+    <option name="tabsHeight" value="20" />
     <option name="accentColor" value="79cb60" />
     <option name="selectedTheme" value="SOLARIZED_LIGHT" />
     <option name="userId" value="116fc90f:170fe81da33:-7ff8" />
