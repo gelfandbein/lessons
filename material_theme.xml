@@ -1,0 +1,21 @@
+<application>
+  <component name="MaterialThemeConfig">
+    <option name="accentMode" value="true" />
+    <option name="allowDataCollection" value="true" />
+    <option name="compactDropdowns" value="true" />
+    <option name="isCompactMenus" value="true" />
+    <option name="isCompactStatusBar" value="true" />
+    <option name="isCompactTables" value="true" />
+    <option name="isContrastMode" value="true" />
+    <option name="isWizardShown" value="true" />
+    <option name="overrideAccentColor" value="false" />
+    <option name="pristineConfig" value="false" />
+    <option name="tabFontSize" value="14" />
+    <option name="settingsSelectedTab" value="6" />
+    <option name="tabsHeight" value="24" />
+    <option name="accentColor" value="d3d2b6" />
+    <option name="selectedTheme" value="SOLARIZED_LIGHT" />
+    <option name="userId" value="7e217396:17045718d25:-8000" />
+    <option name="version" value="4.11.5" />
+  </component>
+</application>
