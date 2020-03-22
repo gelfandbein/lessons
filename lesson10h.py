@@ -14,7 +14,7 @@ class Person:
 def main():
     a, b, c = input("Enter yours Firstname, Lastname & age separated by space: ").split()
     Person(a,b,c)
-    Person.talk()
+    Person.talk(0)
 
 
 if __name__ == "__main__":
