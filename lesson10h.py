@@ -1,7 +1,6 @@
 # Lesson 10: Classes, scope, and namespaces
 import sys
 
-
 class Person:
     def __init__(self, firstname, lastname, age):
         self.firstname = firstname
@@ -9,18 +8,13 @@ class Person:
         self.age = age
 
     def talk(self):
-        return print(f"Hello, my name is {self.firstname} {self.lastname}. I'm {self.age} years old")
-
-def main():
-    a, b, c = input("Enter yours Firstname, Lastname & age separated by space: ").split()
-    Person(a,b,c)
-    Person.talk(0)
-
+        print(f"Hello, my name is {app.firstname} {app.lastname}. I'm {app.age} years old")
 
 if __name__ == "__main__":
+    a, b, c = input("Enter yours Firstname, Lastname & age separated by space: ").split()
+    app = Person(a,b,c)
     try:
-        main()
-        #app = Person()
+        app.talk()
     except KeyboardInterrupt:
         print("\nGot KeyboardInterrupt! Exiting...")
         sys.exit()
