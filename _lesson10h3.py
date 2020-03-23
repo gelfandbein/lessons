@@ -31,48 +31,42 @@
 # controller.is_exist("BBC") == "Yes"
 # """
 
-import sys
-import random
+import sys, random
+from pynput import keyboard
 
 class TVController():
-    def __init__(self, command):
+    def __init__(self):
         pass
 
     def test(self):
-        test = True
         rnd = random.randint(0, 1)
-        print("random is: ", rnd)
         if rnd == 0:
-            ctrl_state = print("Yours TV is turned 0FF. Turn it 0N? (y/n): ")
-            while 1:
-                x = keyboard.read(1000, timeout = 0)
-                if len(x):
-                    print("test passed!")
-                    # if x == "y":
-                    #     pass
-                    # if x == "n":
-                    #     pass
-                    # else:
-                    #     sys.exit("Bye bye!")
+            state = input("Yours TV is turned 0FF. Turn it 0N? (y/n): ")
+            if state == "y":
+                print("TV turned 0N!")
+                return
+            else:
+                print("Ok! Bye bye")
+                sys.exit()
 
-
-        return "Test passed!", controller.test
-
+        print("TV already turned 0N!")
+    def channels(self):
+        channels_list = ["BBC", "Discovery", "TV1000"]
+        print("Channels loaded into TVController memory: ", channels_list)
 
     def main(self):
-        pass
+        print("...main block passed")
+        return True
 
 
-def channels():
-    channels_list = ["BBC", "Discovery", "TV1000"]
-    print(channels_list)
 
 if __name__ == "__main__":
     command = int(input("Enter command: "))
-    controller = TVController(command)
+    controller = TVController()
     try:
-        channels()
         controller.test()
+        controller.channels()
+        controller.main()
     except KeyboardInterrupt:
         print("\nGot KeyboardInterrupt! Exiting...")
         sys.exit()
