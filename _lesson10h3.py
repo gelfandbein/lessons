@@ -1,5 +1,5 @@
 # Lesson 10: Classes, scope, and namespaces
-# Task 3: TV controller
+# Task 3: TV controller  
 # Create a simple prototype of a TV controller in Python. It’ll use the following commands:
 #
 # first_channel() - turns on the first channel from the list.
