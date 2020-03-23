@@ -1,4 +1,4 @@
-
+import sys
 
 def on_press(key):
     try:
