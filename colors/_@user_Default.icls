@@ -3,7 +3,7 @@
     <property name="created">2020-03-22T12:24:46</property>
     <property name="ide">PyCharmCore</property>
     <property name="ideVersion">2019.3.4.0.0</property>
-    <property name="modified">2020-03-22T22:49:22</property>
+    <property name="modified">2020-03-23T18:18:45</property>
     <property name="originalScheme">Default</property>
   </metaInfo>
   <colors>
@@ -18,7 +18,7 @@
     <option name="FILESTATUS_IDEA_FILESTATUS_MERGED_WITH_PROPERTY_CONFLICTS" value="cb4b16" />
     <option name="FILESTATUS_IDEA_SVN_FILESTATUS_EXTERNAL" value="72a038" />
     <option name="FILESTATUS_IDEA_SVN_FILESTATUS_OBSTRUCTED" value="727238" />
-    <option name="FILESTATUS_IDEA_SVN_REPLACED" value="22863a" />
+    <option name="FILESTATUS_IDEA_SVN_REPLACED" value="859900" />
     <option name="FILESTATUS_MERGED" value="6c71c4" />
     <option name="FILESTATUS_MODIFIED" value="2aa198" />
     <option name="FILESTATUS_NOT_CHANGED_IMMEDIATE" value="268bd2" />
