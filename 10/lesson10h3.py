@@ -35,34 +35,31 @@ import sys
 import random
 
 class TVController():
-    def __init__(self, command):
+    def __init__(self):
         pass
 
     def test(self):
-        test = True
         rnd = random.randint(0, 1)
         if rnd == 0:
             ctrl_state = input("Yours TV is turned 0FF. Turn it 0N? (y/n): ")
-                if ctrl_state == 'n':
-                    raise KeyboardInterrupt
-                
-        return "Test passed!", controller.test
+            if ctrl_state == 'n':
+                raise KeyboardInterrupt
+
+        return print("Test passed!")
 
 
     def main(self):
         pass
 
-
-def channels():
-    channels_list = ["BBC", "Discovery", "TV1000"]
-    print(channels_list)
+    def channels(self):
+        chan_list = ["BBC", "Discovery", "TV1000"]
+        print(f"Now we have {chan_list}. Right now you see BBC channel")
 
 if __name__ == "__main__":
-    command = int(input("Enter command: "))
-    controller = TVController(command)
+    controller = TVController()
     try:
-        channels()
         controller.test()
+        controller.channels()
     except KeyboardInterrupt:
-        print("\nGot KeyboardInterrupt! Exiting...")
+        print("\nGot STOP. Exiting...")
         sys.exit()
