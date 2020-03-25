@@ -1,2 +1,6 @@
-my_tuple = ('a', 'b', 'c', 'd', 'e', 'f', 'g')
-print(my_tuple[1:6])
+# vowels list
+vowels = ['a', 'e', 'i', 'o', 'u']
+
+# 'p' doesn't exist in the list
+index = vowels.index('o')
+print('The index of p:', index)

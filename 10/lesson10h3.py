@@ -36,30 +36,45 @@ import random
 
 class TVController():
     def __init__(self):
-        pass
+        self.list = ["BBC", "Discovery", "TV1000"]
+        self.status = 0
 
     def test(self):
-        rnd = random.randint(0, 1)
-        if rnd == 0:
-            ctrl_state = input("Yours TV is turned 0FF. Turn it 0N? (y/n): ")
-            if ctrl_state == 'n':
+        if controller.status == 0:
+            status = input("Yours TV is turned 0FF. Turn it 0N? (y/n): ")
+            if status == "y":
+                return print("Hardware test passed!")
+            else:
                 raise KeyboardInterrupt
 
-        return print("Test passed!")
+
+    def swith_channel(self, cc):
+        cc_pos = controller.list.index(cc)
+        if cc in controller.list:
+            print(f"Yes, {cc} found in channels on {cc_pos} position")
 
 
     def main(self):
-        pass
+        # start channel at power0N TV
+        cc = 0
+        print(f"TV is 0N. Now you watch the {cc} channel. You have {controller.list} channels.")
+        choice = input("Do you want switch the channel? (p)revious or (n)ext (q - to quit): ")
+        if choice == "p":
+            controller.swith_channel(cc)
+        elif choice == "n":
+            controller.swith_channel(cc)
+        else:
+            raise KeyboardInterrupt
 
-    def channels(self):
-        chan_list = ["BBC", "Discovery", "TV1000"]
-        print(f"Now we have {chan_list}. Right now you see BBC channel")
+        #return current_channel()
+
+
 
 if __name__ == "__main__":
     controller = TVController()
     try:
         controller.test()
-        controller.channels()
+        controller.main()
     except KeyboardInterrupt:
-        print("\nGot STOP. Exiting...")
+        print("\nGot STOP. Turning 0FF & exiting from this fucking world...")
         sys.exit()
