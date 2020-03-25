@@ -38,6 +38,7 @@ class TVController():
     def __init__(self):
         self.list = ["BBC", "Discovery", "TV1000"]
         self.status = 0
+        self.channel = self.list[0]
 
     def test(self):
         if controller.status == 0:
@@ -48,21 +49,20 @@ class TVController():
                 raise KeyboardInterrupt
 
 
-    def swith_channel(self, cc):
-        cc_pos = controller.list.index(cc)
-        if cc in controller.list:
-            print(f"Yes, {cc} found in channels on {cc_pos} position")
-
+    def swith(self, channel):
+        print(f"Yes, {controller.list[channel]} channel found. Switching...")
+        return controller.channel
 
     def main(self):
         # start channel at power0N TV
-        cc = 0
-        print(f"TV is 0N. Now you watch the {cc} channel. You have {controller.list} channels.")
+        print(f"TV is 0N. Now you watch the {controller.channel} channel. You have {controller.list} channels.")
         choice = input("Do you want switch the channel? (p)revious or (n)ext (q - to quit): ")
-        if choice == "p":
-            controller.swith_channel(cc)
-        elif choice == "n":
-            controller.swith_channel(cc)
+        if choice == "n":
+            controller.channel += 1
+            controller.swith(controller.channel)
+        elif choice == "p":
+            controller.channel += -1
+            controller.swith(controller.channel)
         else:
             raise KeyboardInterrupt
 
