@@ -41,21 +41,11 @@ class TVController():
     def test(self):
         test = True
         rnd = random.randint(0, 1)
-        print("random is: ", rnd)
         if rnd == 0:
-            ctrl_state = print("Yours TV is turned 0FF. Turn it 0N? (y/n): ")
-            while 1:
-                x = keyboard.read(1000, timeout = 0)
-                if len(x):
-                    print("test passed!")
-                    # if x == "y":
-                    #     pass
-                    # if x == "n":
-                    #     pass
-                    # else:
-                    #     sys.exit("Bye bye!")
-
-
+            ctrl_state = input("Yours TV is turned 0FF. Turn it 0N? (y/n): ")
+                if ctrl_state == 'n':
+                    raise KeyboardInterrupt
+                
         return "Test passed!", controller.test
 
 
