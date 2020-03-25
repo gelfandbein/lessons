@@ -1,5 +1,5 @@
 # Lesson 10: Classes, scope, and namespaces
-# Task 3: TV controller
+# Task 3: TV controller  
 # Create a simple prototype of a TV controller in Python. It’ll use the following commands:
 #
 # first_channel() - turns on the first channel from the list.
@@ -35,44 +35,31 @@ import sys
 import random
 
 class TVController():
-    def __init__(self, command):
+    def __init__(self):
         pass
 
     def test(self):
-        test = True
         rnd = random.randint(0, 1)
-        print("random is: ", rnd)
         if rnd == 0:
-            ctrl_state = print("Yours TV is turned 0FF. Turn it 0N? (y/n): ")
-            while 1:
-                x = keyboard.read(1000, timeout = 0)
-                if len(x):
-                    print("test passed!")
-                    # if x == "y":
-                    #     pass
-                    # if x == "n":
-                    #     pass
-                    # else:
-                    #     sys.exit("Bye bye!")
+            ctrl_state = input("Yours TV is turned 0FF. Turn it 0N? (y/n): ")
+            if ctrl_state == 'n':
+                raise KeyboardInterrupt
 
-
-        return "Test passed!", controller.test
+        return print("Test passed!")
 
 
     def main(self):
         pass
 
-
-def channels():
-    channels_list = ["BBC", "Discovery", "TV1000"]
-    print(channels_list)
+    def channels(self):
+        chan_list = ["BBC", "Discovery", "TV1000"]
+        print(f"Now we have {chan_list}. Right now you see BBC channel")
 
 if __name__ == "__main__":
-    command = int(input("Enter command: "))
-    controller = TVController(command)
+    controller = TVController()
     try:
-        channels()
         controller.test()
+        controller.channels()
     except KeyboardInterrupt:
-        print("\nGot KeyboardInterrupt! Exiting...")
+        print("\nGot STOP. Exiting...")
         sys.exit()
