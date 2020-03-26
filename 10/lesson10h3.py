@@ -41,7 +41,7 @@ class TVController():
         self.channel = 0
 
     def test(self):
-        if controller.status == 0:
+        if self.status == 0:
             status = input("Yours TV is turned 0FF. Turn it 0N? (y/n): ")
             if status == "y":
                 return print("Hardware test passed!")
@@ -50,23 +50,23 @@ class TVController():
 
 
     def swith(self, channel):
-        if channel == len(controller.list):
+        if channel == len(self.list):
             controller.channel = 0
         elif channel < 0:
-            controller.channel = len(controller.list)-1
+            controller.channel = len(self.list)-1
         
-        print(f"-> '{controller.list[controller.channel]}' channel found. Switching...")
+        print(f"-> '{self.list[self.channel]}' channel found. Switching...")
         controller.main()
 
     def main(self):
-        print(f"Now you watch the {controller.list[controller.channel]} channel. You have {controller.list} channels.")
+        print(f"Now you watch the {self.list[self.channel]} channel. You have {self.list} channels.")
         choice = input("Do you want switch the channel? (p)revious or (n)ext (q - to quit): ")
         if choice == "n":
             controller.channel = controller.channel + 1
-            controller.swith(controller.channel)
+            controller.swith(self.channel)
         elif choice == "p":
             controller.channel = controller.channel - 1
-            controller.swith(controller.channel)
+            controller.swith(self.channel)
         else:
             raise KeyboardInterrupt
 
