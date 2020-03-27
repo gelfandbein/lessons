@@ -1,6 +1,21 @@
-# vowels list
-vowels = ['a', 'e', 'i', 'o', 'u']
 
-# 'p' doesn't exist in the list
-index = vowels.index('o')
-print('The index of p:', index)
+import functools
+
+
+class Example:
+    def wrapper(func):
+        @functools.wraps(func)
+        def wrap(self, *args, **kwargs):
+            print("inside wrap")
+            return func(self, *args, **kwargs)
+        return wrap
+
+    @wrapper
+    def method(self):
+        print("METHOD")
+
+    wrapper = staticmethod(wrapper)
+
+
+e = Example()
+e.method()
