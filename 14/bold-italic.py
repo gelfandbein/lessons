@@ -15,39 +15,31 @@ import sys
 import time
 
 def benchmark(func):
-    def wrap(*args, **kwargs):
+    def wrapper(*args, **kwargs):
         start = time.time()
         return_value = func(*args, **kwargs)
         end = time.time()
         print('[*] Running time is {} seconds.'.format(end-start))
         return return_value
-    return wrap
-
-def decor():
-    g = '\033[92m'
-    y = '\033[93m'
-    r = '\033[91m'
-    b = '\033[1m'
-    i = '\x1B[3m'
-    u = '\033[4m'
-    c = '\033[0m'
-
-def symb(func):
-    def wrapper(*args, **kwargs):
-        print(" ** " + func() + " ## ")
     return wrapper
 
-# def bold(func):
-#     def func():
-#         return Decor.s + Decor.b + h() + Decor.c + Decor.e
-#     return func
 
-# def italic(func):
-#     def func():
-#         return Decor.i + h() + Decor.c
-#     return func
+g = '\033[92m'
+y = '\033[93m'
+r = '\033[91m'
+b = '\033[1m'
+i = '\x1B[3m'
+c = '\033[0m'
+u = '\033[4m'
 
-@symb
+def wrap(func):
+    def wrapper(*args, **kwargs):
+        print(f" ** {func()} ## ")
+        print(f"{b} {func()} {c}")
+    return wrapper
+
+
+@wrap
 def hello():
     return "Hello, world!"
 
