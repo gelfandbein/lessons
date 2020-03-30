@@ -6,7 +6,7 @@ Should be userd with coverage
 coverage run --omit=test_calculator.py -m unittest test_calculator
 """
 
-class TestCalculator(unittest.TestCase):
+class TestTVController(unittest.TestCase):
     def setUp(self):
         self.calc = Calculator()
 
