@@ -47,10 +47,11 @@ def symb(func):
 #         return Decor.i + h() + Decor.c
 #     return func
 
-@benchmark
+@symb
 def hello():
     return "Hello, world!"
 
+p = hello()
 
 
 if __name__ == "__main__":
