@@ -34,13 +34,13 @@ class TestTVController(unittest.TestCase):
 
     @patch('builtins.input', return_value='y') # side_effect=["y", "yes"])
     def test_switch(self, value):
-        channel = self.tvctl.channel
+        # channel = self.tvctl.channel
         saved_stdout = sys.stdout
         try:
             out = io.StringIO()
             sys.stdout = out
-            #self.switch(channel)
-            output = out.getvalue().strip()
+            self.tvctl.switch(self.tvctl.channel)
+            output = out.getvalue() #.strip()
             self.assertEqual(output, "Switching...")
         finally:
             sys.stdout = saved_stdout

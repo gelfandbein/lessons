@@ -28,10 +28,10 @@ class TVController:
             self.channel = len(self.list)-1
         
         print(f"-> '{self.list[self.channel]}' channel found. Switching...")
-        return controller.main()
+        return self.main()
 
     def main(self):
-        controller.test()
+        self.test()
 
         print(f"Now you watch the {self.list[self.channel]} channel. You have {self.list} channels.")
         choice = input("Do you want switch the channel? (p)revious or (n)ext (q - to quit): ")
