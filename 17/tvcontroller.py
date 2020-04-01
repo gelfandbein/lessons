@@ -18,7 +18,7 @@ class TVController:
                 return print("Hardware test passed!")
             else:
                 self.status = 0
-                raise KeyboardInterrupt
+                self.exit(True)
 
 
     def switch(self, channel):
@@ -27,28 +27,30 @@ class TVController:
         elif channel < 0:
             self.channel = len(self.list)-1
         
-        print(f"-> '{self.list[self.channel]}' channel found. Switching...")
         return self.main()
 
     def main(self):
         self.test()
 
-        print(f"Now you watch the {self.list[self.channel]} channel. You have {self.list} channels.")
-        choice = input("Do you want switch the channel? (p)revious or (n)ext (q - to quit): ")
+        a = "\033[92m" + ', '.join(self.list) + "\033[0m"
+        aa = "\x1b[1;31m" + ''.join(self.list[self.channel]) + "\033[0m"
+
+        print("Now you watch the " + aa + " channel. You have " + a + " channels.")
+        choice = input("Do you want switch the channel? (\033[1mp\033[0m)revious or (\033[1mn\033[0m)ext (q - to quit): ")
         if choice == "n":
             self.channel = self.channel + 1
-            controller.switch(self.channel)
+            self.switch(self.channel)
         elif choice == "p":
             self.channel = self.channel - 1
-            controller.switch(self.channel)
+            self.switch(self.channel)
         else:
-            raise KeyboardInterrupt
+            sys.exit(0)
 
 
 if __name__ == "__main__":
     controller = TVController()
     try:
         controller.main()
-    except KeyboardInterrupt:
+    except:
         print("\nGot STOP. Turning 0FF & exiting from this fucking world...")
-        sys.exit()
+        sys.exit(0)
