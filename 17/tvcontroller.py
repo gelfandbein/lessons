@@ -18,7 +18,6 @@ class TVController:
                 return print("Hardware test passed!")
             else:
                 self.status = 0
-                self.exit(True)
 
 
     def switch(self, channel):
@@ -44,7 +43,7 @@ class TVController:
             self.channel = self.channel - 1
             self.switch(self.channel)
         else:
-            sys.exit(0)
+            return Exception
 
 
 if __name__ == "__main__":
