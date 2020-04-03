@@ -37,6 +37,7 @@ class TestTVController(unittest.TestCase):
         # channel = self.tvctl.channel
         saved_stdout = sys.stdout
         self.assertRaises(KeyboardInterrupt)
+            with self.assertRaises():
         try:
             out = io.StringIO()
             sys.stdout = out
