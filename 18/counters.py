@@ -19,7 +19,6 @@ def count_lines(f):
   
 def count_chars(f):
     chars=0
-    f.seek(0)
     for line in f:
         lines=line.split()
         chars += sum(len(word) for word in lines)
@@ -28,6 +27,7 @@ def count_chars(f):
 def main(filename):
   with open(filename) as f:
     print(count_lines(f))
+    f.seek(0)
     print(count_chars(f))
   
 def end(self):
@@ -36,5 +36,4 @@ def end(self):
 
 
 if __name__ == "__main__":
-  filename = "./text.txt"
-  main(filename)
+  main("./text.txt")
