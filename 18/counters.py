@@ -1,24 +1,25 @@
-def count_lines(f):
+##
+# count lines when char's in txt file
+##
+
+
+def count_lines(file="./counters.txt"):
     lines = 0
-    for line in f:
-        lines += 1
-    return lines
+    with open(file) as f:
+        for line in f:
+            lines += 1
+        return lines
 
 
-def count_chars(f):
+def count_chars(file="./counters.txt"):
     chars = 0
-    for line in f:
-        lines = line.split()
-        chars += sum(len(word) for word in lines)
-    return chars
-
-
-def main(filename):
-    with open(filename) as f:
-        print(count_lines(f))
-        f.seek(0)
-        print(count_chars(f))
+    with open(file) as f:
+        for line in f:
+            lines = line.split()
+            chars += sum(len(word) for word in lines)
+        return chars
 
 
 if __name__ == "__main__":
-    main("./lessons/18/counters.txt")
+    print("lines: ", count_lines())
+    print("chars: ", count_chars())
